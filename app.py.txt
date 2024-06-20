@@ -1,0 +1,40 @@
+import gradio as gr
+import pandas as pd
+import joblib
+
+# Charger le modèle pré-entraîné
+model = joblib.load('titanic_model.pkl')
+
+def predict_survival(Pclass, Age, SibSp, Parch, Fare, Sex, Embarked):
+    # Prétraiter les caractéristiques
+    features = {
+        'Pclass': [Pclass],
+        'Age': [Age],
+        'SibSp': [SibSp],
+        'Parch': [Parch],
+        'Fare': [Fare],
+        'Sex': [Sex],
+        'Embarked': [Embarked]
+    }
+    df = pd.DataFrame(features)
+    # Faire des prédictions
+    prediction = model.predict(df)
+    return "Survived" if prediction[0] == 1 else "Not Survived"
+
+# Définir l'interface Gradio
+interface = gr.Interface(
+    fn=predict_survival,
+    inputs=[
+        gr.inputs.Number(label="Pclass"),
+        gr.inputs.Number(label="Age"),
+        gr.inputs.Number(label="SibSp"),
+        gr.inputs.Number(label="Parch"),
+        gr.inputs.Number(label="Fare"),
+        gr.inputs.Textbox(label="Sex"),
+        gr.inputs.Textbox(label="Embarked")
+    ],
+    outputs=gr.outputs.Textbox(label="Survived")
+)
+
+# Lancer l'interface
+interface.launch()
