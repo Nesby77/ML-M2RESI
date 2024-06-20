@@ -14,7 +14,7 @@ Ce projet est une application web basée sur Gradio et FastAPI qui permet de pr�
 1. Clonez le référentiel : `(https://github.com/Nesby77/ML-M2RESI/blob/Nesby77-patch-1/Titanic_Prediction_API.ipynb)`
 2. Installez les dépendances : `pip install -r requirements.txt`
 3. Lancez l'application Gradio : `python app.py`
-4. Accédez à l'interface web depuis votre navigateur à l'adresse `http://localhost:7860`
+
 
 ## Déploiement
 
