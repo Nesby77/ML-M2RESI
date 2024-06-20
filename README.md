@@ -1,29 +1,31 @@
 # ML-M2RESI
 Examen de fin d'année
-# Titanic Prediction API
+# Prédiction de survie du Titanic
 
-Ce projet utilise FastAPI pour créer une API qui prédit la survie des passagers du Titanic.
+Ce projet est une application web basée sur Gradio et FastAPI qui permet de prédire les chances de survie d'un passager lors du naufrage du Titanic en 1912. L'application utilise un modèle de machine learning entraîné sur les données des passagers du Titanic.
 
-## Instructions pour exécuter
+## Fonctionnalités
 
-1. Ouvrez le fichier `titanic_api.ipynb` dans Google Colab.
-2. Exécutez chaque cellule dans l'ordre pour installer les dépendances et démarrer le serveur.
-3. Une fois le serveur démarré, vous verrez une URL publique générée par ngrok.
-4. Utilisez cette URL pour accéder à l'API et tester les prédictions.
+- Interface utilisateur intuitive créée avec Gradio
+- Saisie des caractéristiques du passager (classe, âge, sexe, etc.)
+- Prédiction de la survie (0 = Décédé, 1 = Survécu) à l'aide d'un modèle de machine learning
+- API FastAPI pour effectuer les prédictions
 
-## Exemples de requêtes
+## Démarrage
 
-- URL de base : `http://<ngrok-url>/`
-- Endpoint de prédiction : `http://<ngrok-url>/predict`
+1. Clonez le référentiel : `git clone https://github.com/votre-utilisateur/titanic-prediction.git`
+2. Installez les dépendances : `pip install -r requirements.txt`
+3. Lancez l'application Gradio : `python app.py`
+4. Accédez à l'interface web depuis votre navigateur à l'adresse `http://localhost:7860`
 
-### Exemple de requête
+## Déploiement
 
-```bash
-curl -X POST "<ngrok-url>/predict" -H "accept: application/json" -H "Content-Type: application/json" -d '{
-  "Pclass": 3,
-  "Sex_male": 1,
-  "Age": 22.0,
-  "Siblings_Spouses_Aboard": 1,
-  "Parents_Children_Aboard": 0,
-  "Fare": 7.25
-}'
+L'application est déployée sur Hugging Face Spaces à l'adresse suivante : https://huggingface.co/spaces/votre-espace/titanic-prediction
+
+## Données
+
+Le modèle a été entraîné sur le célèbre jeu de données du Titanic, disponible sur Kaggle : https://www.kaggle.com/c/titanic
+
+## Licence
+
+Ce projet est sous licence MIT.
