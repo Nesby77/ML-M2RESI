@@ -20,12 +20,6 @@ Ce projet est une application web basée sur Gradio et FastAPI qui permet de pr�
 
 ## Déploiement
 
-L'application est déployée sur Hugging Face Spaces à l'adresse suivante : https://huggingface.co/spaces/votre-espace/titanic-prediction
+L'application est déployée sur Hugging Face Spaces à l'adresse suivante : https://huggingface.co/spaces/Nestorthera/Titanic-App
 
-## Données
 
-Le modèle a été entraîné sur le célèbre jeu de données du Titanic, disponible sur Kaggle : https://www.kaggle.com/c/titanic
-
-## Licence
-
-Ce projet est sous licence MIT.
